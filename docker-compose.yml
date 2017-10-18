@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  db:
+    image: postgres:9.5-alpine
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    volumes:
+      - .:/frishtug_app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+volumes:
+  postgres-data:
+    driver: local

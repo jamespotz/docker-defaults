@@ -4,13 +4,10 @@ MAINTAINER James Robert Rooke <thepoltergeist23@gmail.com>
 
 RUN apk update \
   && apk add build-base postgresql-dev \
-  && apk add --no-cache curl tar bash \
-  && apk add python imagemagick file \
+  && apk add python imagemagick file \ # carrierwave/paperclip dependencies
   && echo https://dl-cdn.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories \
   && echo https://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories \
-  && apk add --update nodejs nodejs-npm yarn \
-  && rm -rf /var/cache/apk/* \
-  && apk del curl tar binutils
+  && apk add --update nodejs nodejs-npm yarn # webpacker!... :)
 
 # Environment variables
 ENV CACHE_GEMS /tmp

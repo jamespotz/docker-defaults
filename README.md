@@ -14,3 +14,6 @@
 
 ## To stop docker
 'docker stop'
+
+## Reset rails database
+docker-compose exec --user "$(id -u):$(id -g)" website rails db:reset

@@ -2,6 +2,7 @@
 ## Dependencies
 - docker
 - docker-compose
+- docker-machine
 
 ## Commands building the docker image
 'docker-compose up --build' or 'docker-compose build'
